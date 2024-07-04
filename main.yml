@@ -6,7 +6,7 @@
     username: "{{ ansible_user_id }}"
     home: "{{ ansible_env.HOME }}"
   vars_files:
-    - ./vault
+    - ./vault.yml
 
   pre_tasks:
     - name: "pacman : Enable Multilib"
@@ -39,4 +39,6 @@
   roles:
     - { name: "home", tags: ["home"] }
     - { name: "ssh", tags: ["ssh"] }
+    - { name: "gpg", tags: ["gpg"] }
     - { name: "paru", tags: ["paru"] }
+    - { name: "zsh", tags: ["zsh"] }
