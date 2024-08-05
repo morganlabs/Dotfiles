@@ -40,7 +40,6 @@
   roles:
     - { name: "home", tags: ["home"] }
     - { name: "ssh", tags: ["ssh"] }
-    - { name: "gpg", tags: ["gpg"] }
     - { name: "paru", tags: ["paru"] }
     - { name: "zsh", tags: ["zsh"] }
     - { name: "fonts", tags: ["fonts"] }
