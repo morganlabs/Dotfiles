@@ -5,6 +5,7 @@
   vars:
     username: "{{ ansible_user_id }}"
     home: "{{ ansible_env.HOME }}"
+    config: "{{ home }}/.config"
   vars_files:
     - ./vault.yml
 
@@ -42,3 +43,42 @@
     - { name: "gpg", tags: ["gpg"] }
     - { name: "paru", tags: ["paru"] }
     - { name: "zsh", tags: ["zsh"] }
+    - { name: "fonts", tags: ["fonts"] }
+
+    - { name: "tmux", tags: ["tmux"] }
+
+    - { name: "flatpak", tags: ["flatpak"] }
+    - { name: "floorp", tags: ["floorp"] }
+
+    - { name: "wayland", tags: ["wayland"] }
+    - { name: "pywal", tags: ["pywal"] }
+    - { name: "pipewire", tags: ["pipewire"] }
+    - { name: "hyprland", tags: ["hyprland"] }
+    - { name: "waybar", tags: ["waybar"] }
+    - { name: "kitty", tags: ["kitty"] }
+    - { name: "discord", tags: ["discord"] }
+    - { name: "element", tags: ["element"] }
+    - { name: "scripts", tags: ["scripts"] }
+    - { name: "rofi", tags: ["rofi"] }
+    - { name: "mako", tags: ["mako"] }
+    - { name: "theming", tags: ["theming"] }
+    - { name: "polkit", tags: ["polkit"] }
+    - { name: "node", tags: ["node"] }
+    - { name: "git", tags: ["git"] }
+    - { name: "ufw", tags: ["ufw"] }
+
+    - { name: "steam", tags: ["steam"] }
+    - { name: "rust", tags: ["rust"] }
+    - { name: "proton", tags: ["proton"] }
+    - { name: "obsidian", tags: ["obsidian"] }
+    - { name: "nextcloud", tags: ["nextcloud"] }
+    - { name: "minecraft", tags: ["minecraft"] }
+    - { name: "man", tags: ["man"] }
+    - { name: "flatseal", tags: ["flatseal"] }
+    - { name: "bluetooth", tags: ["bluetooth"] }
+    - { name: "blender", tags: ["blender"] }
+    - { name: "wl-clipboard", tags: ["wl-clipboard"] }
+    - { name: "vimv", tags: ["vimv"] }
+    - { name: "unzip", tags: ["unzip"] }
+    - { name: "transmission", tags: ["transmission"] }
+    - { name: "nvim", tags: ["nvim"] }

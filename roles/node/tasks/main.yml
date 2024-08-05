@@ -1,0 +1,14 @@
+---
+- name: Install
+  become: yes
+  pacman:
+    name: ["nodejs", "npm"]
+    state: present
+- name: Config
+  template:
+    src: .npmrc.j2
+    dest: "{{ home }}/.npmrc"
+- name: Install Bun
+  npm:
+    name: bun
+    global: true

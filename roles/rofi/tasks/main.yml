@@ -1,0 +1,10 @@
+---
+- name: Install
+  kewlfft.aur.aur:
+    name: [rofi-wayland, kora-icon-theme]
+    state: present
+- name: Config
+  file:
+    src: "{{ role_path }}/files"
+    dest: "{{ config }}/rofi"
+    state: link

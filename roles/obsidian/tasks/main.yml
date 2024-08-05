@@ -1,0 +1,9 @@
+---
+- name: Install
+  become: true
+  flatpak:
+    name: md.obsidian.Obsidian
+    state: present
+- name: Enable Wayland
+  become: true
+  shell: flatpak override --socket=wayland md.obsidian.Obsidian

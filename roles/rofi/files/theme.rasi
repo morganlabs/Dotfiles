@@ -1,0 +1,55 @@
+@import "~/.cache/wal/colors-rofi.rasi"
+
+* {
+	background-color: transparent;
+	text-color: @foreground;
+}
+
+mainbox {
+	spacing: 16px;
+}
+
+window {
+	width: 580;
+}
+
+inputbar {
+	padding-bottom: 16px;
+}
+
+listview, inputbar {
+	background-color: @background-75;
+}
+
+entry {
+	placeholder: "Type to search";
+}
+
+element {
+    padding: 16px;
+    spacing: 16px;
+}
+
+element selected {
+	background-color: @color1;
+}
+
+element-icon {
+	size: 1em;
+}
+
+element-text {
+	vertical-align: 0.5;
+}
+
+inputbar {
+    padding: 16px;
+    children: [ entry ];
+    border: 3px;
+    border-color: @color1;
+}
+
+listview {
+	fixed-height: true;
+	lines: 6;
+}

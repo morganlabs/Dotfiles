@@ -1,0 +1,16 @@
+font=BlexMono Nerd Font 14
+format=<span font="10">%a</span>\n<b>%s</b>\n<span font="12">%b</span>
+sort=-time
+layer=overlay
+anchor=top-right
+background-color={background}BF
+width=384
+height=125
+margin=10
+padding=10
+border-size=2
+border-color={color1}
+max-icon-size=48
+default-timeout=5000
+ignore-timeout=1
+

@@ -1,0 +1,37 @@
+@import "../../.cache/wal/colors-waybar.css";
+
+* {
+	font-family: "BlexMono Nerd Font";
+	font-weight: 500;
+	font-size: 1rem;
+	color: @foreground;
+	border: none;
+	border-radius: 0;
+        min-height: 0;
+}
+
+window#waybar {
+	background: alpha(@background, 0.75);
+}
+
+.modules-center * .module,
+.modules-right * .module,
+#custom-music.module {
+	margin: 0 8px;
+}
+
+#workspaces .active {
+	background-color: @color1;
+}
+
+#custom-power.flat {
+	padding-right: 9px;
+}
+
+#custom-music.module {
+	padding: 0 8px;
+}
+
+#pulseaudio.muted {
+	padding: 0 0px;
+}

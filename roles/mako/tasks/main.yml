@@ -1,0 +1,15 @@
+---
+- name: Install
+  become: true
+  pacman:
+    name: [mako, libnotify]
+    state: present
+- name: Config (1/2)
+  file:
+    path: "{{ home }}/.config/mako"
+    state: directory
+- name: Config (2/2)
+  file:
+    src: "{{ home }}/.cache/wal/config-mako"
+    dest: "{{ config }}/mako/config"
+    state: link

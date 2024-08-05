@@ -1,0 +1,28 @@
+---
+- name: Install
+  become: yes
+  become_user: aur_builder
+  kewlfft.aur.aur:
+    name:
+      [
+        "hyprland",
+        "hypridle",
+        "hyprlock",
+        "wmenu",
+        "dmenu",
+        "network-manager-applet",
+        "pipewire",
+        "pipewire-jack",
+        "pipewire-alsa",
+        "pipewire-pulse",
+        "xdg-desktop-portal-hyprland",
+        "pamixer",
+        "swaybg",
+        "pywal"
+      ]
+    state: present
+- name: Config
+  file:
+    src: "{{ role_path }}/files/"
+    dest: "{{ config }}/hypr"
+    state: link

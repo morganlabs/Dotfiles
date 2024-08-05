@@ -1,0 +1,15 @@
+---
+- name: Install
+  become: true
+  kewlfft.aur.aur:
+    name: 
+      - waybar
+      - pavucontrol
+      - playerctl
+      - ttf-roboto-flex
+    state: present
+- name: Config
+  file:
+    src: "{{ role_path }}/files/"
+    dest: "{{ config }}/waybar"
+    state: link

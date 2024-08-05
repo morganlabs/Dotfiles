@@ -1,0 +1,37 @@
+---
+- name: Install
+  kewlfft.aur.aur:
+    name:
+      - ttf-roboto-flex
+      - ttf-ibmplex-mono-nerd
+      - gnu-free-fonts
+      - noto-fonts-cjk
+    state: present
+- name: Config (1/5)
+  become: true
+  template:
+    src: local.conf.j2
+    dest: /etc/fonts/local.conf
+- name: Config (2/5)
+  file:
+    path: "{{ config }}/fontconfig"
+    state: directory
+- name: Config (3/5)
+  template:
+    src: fonts.conf.j2
+    dest: "{{ config }}/fontconfig/fonts.conf"
+- name: Config (3/5)
+  become: true
+  file:
+    src: "/usr/share/fontconfig/conf.avail/{{ item }}"
+    dest: "/etc/fonts/conf.d/{{ item }}"
+    state: link
+  with_items:
+    - 10-sub-pixel-rgb.conf
+    - 10-hinting-slight.conf 
+    - 11-lcdfilter-default.conf
+- name: Config (5/5)
+  become: true
+  template:
+    src: freetype2.sh.j2
+    dest: /etc/profile.d/freetype2.sh

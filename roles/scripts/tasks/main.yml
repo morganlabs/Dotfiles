@@ -1,0 +1,10 @@
+---
+- name: Install
+  pacman:
+    name: [grim, slurp, jq, fzf]
+    state: present
+- name: Add scripts
+  file:
+    src: "{{ role_path }}/files"
+    dest: "{{ home }}/.local/bin"
+    state: link

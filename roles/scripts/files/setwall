@@ -1,0 +1,11 @@
+#!/bin/sh
+WALLPAPER="$1"
+
+if [[ "$WALLPAPER" = "" ]]; then
+	source ~/.cache/wal/colors.sh || exit 1
+	WALLPAPER="$wallpaper"
+fi
+
+wal -i "$WALLPAPER" > /dev/null
+killall swaybg
+swaybg -i "$WALLPAPER" > /dev/null 2>&1 & disown

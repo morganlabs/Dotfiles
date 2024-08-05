@@ -1,0 +1,17 @@
+---
+- name: Install
+  kewlfft.aur.aur:
+    name: [protonmail-bridge, wireguard-tools, systemd-resolvconf]
+    state: present
+- name: Config
+  become: true
+  template: 
+    src: vpn.conf.j2
+    dest: /etc/wireguard/wg0.conf
+- name: Enable
+  become: true
+  ansible.builtin.systemd_service:
+    name: wg-quick@wg0
+    state: restarted
+    enabled: true
+    daemon_reload: true

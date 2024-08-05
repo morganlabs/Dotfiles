@@ -1,0 +1,22 @@
+#!/bin/sh
+
+directories=($(find ~/Documents/Personal ~/Documents/Work ~/Documents/College -maxdepth 1 -mindepth 1 -type d 2>/dev/null))
+directories+=("$HOME/Dotfiles")
+selected=`for dir in "${directories[@]}"; do echo "$dir"; done | fzf`
+selected_name=$(basename "$selected" | tr . _)
+
+if [[ -z "$selected" ]]; then
+    exit 0
+fi
+
+if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
+    tmux new-session -s $selected_name -c $selected
+    exit 0
+fi
+
+if ! tmux has-session -t=$selected_name 2> /dev/null; then
+    tmux new-session -ds $selected_name -c $selected
+fi
+
+tmux switch-client -t $selected_name
+

@@ -1,0 +1,12 @@
+---
+- name: Install
+  become: true
+  flatpak:
+    name: one.ablaze.floorp
+    state: present
+- name: Flatpak permissions
+  become: true
+  shell: flatpak override one.ablaze.floorp "{{ item }}"
+  with_items:
+    - '--device=all'
+    - '--filesystem=~/Downloads'

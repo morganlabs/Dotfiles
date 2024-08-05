@@ -1,0 +1,11 @@
+---
+- name: Install
+  become: true
+  flatpak:
+    name: com.discordapp.Discord
+    state: present
+- name: Flatpak permissions
+  become: true
+  shell: flatpak override com.discordapp.Discord "{{ item }}"
+  with_items:
+    - '--filesystem=~/Downloads'

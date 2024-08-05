@@ -1,0 +1,15 @@
+---
+- name: Install
+  kewlfft.aur.aur:
+    name: [
+        "pipewire",
+        "pipewire-jack",
+        "pipewire-alsa",
+        "pipewire-pulse",
+      ]
+    state: present
+- name: Enable Pipewire Pulse
+  systemd:
+    name: pipewire-pulse
+    state: started
+    scope: user
