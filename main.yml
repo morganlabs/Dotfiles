@@ -81,3 +81,5 @@
     - { name: "unzip", tags: ["unzip"] }
     - { name: "transmission", tags: ["transmission"] }
     - { name: "nvim", tags: ["nvim"] }
+    - { name: "joshuto", tags: ["joshuto"] }
+    - { name: "lemurs", tags: ["lemurs"] }

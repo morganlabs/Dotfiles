@@ -1,11 +1,10 @@
 ---
 - name: Install
-  become: true
-  pacman:
-    name: kitty
+  kewlfft.aur.aur:
+    name: joshuto-bin
     state: present
 - name: Config
   file:
     src: "{{ role_path }}/files"
-    dest: "{{ config }}/kitty"
+    dest: "{{ config }}/joshuto"
     state: link
