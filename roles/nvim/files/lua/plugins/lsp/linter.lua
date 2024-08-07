@@ -22,11 +22,11 @@ return {
             "InsertLeave",
             "TextChanged",
         }, {
-                group = lint_augroup,
-                callback = function()
-                    lint.try_lint()
-                end,
-            })
+            group = lint_augroup,
+            callback = function()
+                lint.try_lint()
+            end,
+        })
 
         vim.keymap.set("n", "<leader>l", function()
             lint.try_lint()

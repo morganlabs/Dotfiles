@@ -9,3 +9,8 @@
     cmd: rustup install stable
   args:
     creates: "{{ home }}/.cargo/bin"
+- name: Install rust-analyzer
+  shell:
+    cmd: rustup component add rust-analyzer
+  args:
+    creates: "/usr/lib/rustup/bin/rust-analyzer"
