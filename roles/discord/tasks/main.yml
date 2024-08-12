@@ -2,10 +2,10 @@
 - name: Install
   become: true
   flatpak:
-    name: com.discordapp.Discord
+    name: dev.vencord.Vesktop
     state: present
 - name: Flatpak permissions
   become: true
-  shell: flatpak override com.discordapp.Discord "{{ item }}"
+  shell: flatpak override dev.vencord.Vesktop "{{ item }}"
   with_items:
-    - '--filesystem=~/Downloads'
+    - "--filesystem=~/Downloads"

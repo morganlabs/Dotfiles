@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32, 
+    "height": 32,
     "modules-left": [
 	    "hyprland/workspaces",
             "custom/music"
@@ -58,7 +58,7 @@
     "clock": {
 	    "format": "{:%A, %d %B %H:%M}"
     },
-    
+
     "custom/power": {
 	    "format": "⏻",
 	    "on-click": "~/.config/waybar/scripts/power-menu.sh"

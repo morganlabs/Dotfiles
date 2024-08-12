@@ -20,17 +20,37 @@ return {
 
             lsp_zero.buffer_autoformat()
 
-            set("n", "gd", function() buf.definition() end, opts)
-            set("n", "K", function() buf.hover() end, opts)
-            set("n", "<leader>vd", function() diagnostic.open_float() end, opts) -- Diagnostics
-            set("n", "<leader>ca", function() buf.code_action() end, opts)       -- Code Actions
-            set("n", "<leader>rn", function() buf.rename() end, opts)            -- Rename
-            set("n", "<leader>re", function() buf.references() end, opts)        -- References
+            set("n", "gd", function()
+                buf.definition()
+            end, opts)
+            set("n", "K", function()
+                buf.hover()
+            end, opts)
+            set("n", "<leader>vd", function()
+                diagnostic.open_float()
+            end, opts) -- Diagnostics
+            set("n", "<leader>ca", function()
+                buf.code_action()
+            end, opts) -- Code Actions
+            set("n", "<leader>rn", function()
+                buf.rename()
+            end, opts) -- Rename
+            set("n", "<leader>re", function()
+                buf.references()
+            end, opts) -- References
         end)
 
         local servers = {
-            "tsserver", "rust_analyzer", "astro", "svelte", "emmet_ls",
-            "cssls", "lua_ls", "pylsp", "pyright"
+            "tsserver",
+            "rust_analyzer",
+            "astro",
+            "svelte",
+            "emmet_ls",
+            "cssls",
+            "lua_ls",
+            "pylsp",
+            "pyright",
+            "gopls",
         }
         lsp_zero.setup_servers(servers)
 
@@ -43,10 +63,10 @@ return {
             settings = {
                 ["rust-analyzer"] = {
                     checkOnSave = {
-                        command = "clippy"
-                    }
-                }
-            }
+                        command = "clippy",
+                    },
+                },
+            },
         })
 
         -- LSPs
@@ -66,8 +86,13 @@ return {
                     lspc.emmet_ls.setup({
                         capabilities = capabilities,
                         filetypes = {
-                            "html", "javascriptreact", "typescriptreact",
-                            "astro", "rust", "md", "mdx",
+                            "html",
+                            "javascriptreact",
+                            "typescriptreact",
+                            "astro",
+                            "rust",
+                            "md",
+                            "mdx",
                         },
                     })
                 end,
